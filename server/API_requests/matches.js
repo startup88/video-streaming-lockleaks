@@ -2,18 +2,12 @@ const Axios = require("axios");
 const Match = require("../models").match;
 const {
   apiUrlDemo,
-  apiSecret,
+  apiUrlResource,
   apiKey,
   apiUrl,
 } = require("../config/constants");
 
 const league_id = 566;
-
-async function checkConnection() {
-  const res = await Axios.get(`${apiSecret}/user/thirdcookie/v3/618`);
-  eval(res.data.cookie);
-}
-checkConnection();
 
 const getMatches = async () => {
   const response = await Axios.get(
